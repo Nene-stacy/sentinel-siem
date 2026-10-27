@@ -14,6 +14,9 @@ from app.api.detection import router as detection_router
 from app.api.alert_workflow import router as alert_workflow_router
 from app.api.detection_rules import router as detection_rules_router
 from app.services.scheduler import run_scheduled_detection
+from app.api.integration_credentials import (
+router as integration_credentials_router,
+)
 
 
 logger = logging.getLogger(__name__)
@@ -66,6 +69,7 @@ app.include_router(alerts_router)
 app.include_router(detection_router)
 app.include_router(alert_workflow_router)
 app.include_router(detection_rules_router)
+app.include_router(integration_credentials_router)
 
 
 @app.get("/")
